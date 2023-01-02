@@ -80,4 +80,5 @@ class PhoneBook:
     def _load(self) -> None:
         for i in Path("phone_book.csv").read_text().split('\n'):
             contact=[c for c in i.split(';')]
+            if len(contact) != 3: continue
             self.add_contact(Contact(contact[0],contact[1],contact[2]),False)
