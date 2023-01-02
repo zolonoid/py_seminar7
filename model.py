@@ -75,7 +75,7 @@ class PhoneBook:
         pass
 
     def _save(self) -> None:
-        Path("PhoneBook.csv").write_text('\n'.join([f"{i.surname()};{i.name()};{i.phone()}" for i in self._book]))
+        Path("phone_book.csv").write_text('\n'.join([f"{i.surname()};{i.name()};{i.phone()}" for i in self._book]))
 
     def _load(self) -> None:
         for i in Path("phone_book.csv").read_text().split('\n'):
